@@ -1,0 +1,31 @@
+<div id="header-wrapper">
+    <div id="header" class="container">
+        <div id="logo">
+            <c:choose>
+                <c:when test="${sessionScope.user!=null}">
+                <div id="first">
+                    <img class="image-centered-div" src="<c:url value='/avatar/${sessionScope.user.login}'/>">
+                </div>
+                <div id="profile">
+                    <h2><c:out value="${sessionScope.user.login}"/>
+                    <br/><a href="<c:url value="/logout"/>">Выход</a>
+                    </h2>
+                </div>
+                </c:when>
+                <c:otherwise>
+                    <custom:authorization/>
+                </c:otherwise>
+            </c:choose>
+        </div>
+        <div id="menu">
+            <ul>
+                <li class="icon icon-ok"><a href="<c:url value='/index' />" accesskey="1" title=""><fmt:message key="homeTab"/></a></li>
+                <li class="icon icon-ok"><a href="<c:url value='/product' />" accesskey="2" title=""><fmt:message key="shopTab"/></a></li>
+                <li class="icon icon-ok"><a href="<c:url value='/profile' />" accesskey="3" title=""><fmt:message key="profileTab"/></a></li>
+                <li class="icon icon-ok"><a href="#" accesskey="4" title=""><fmt:message key="aboutTab"/></a></li>
+                <li class="icon icon-ok"><a href="#" accesskey="5" title=""><fmt:message key="contactsTab"/></a></li>
+                <li><a href="#" accesskey="5" title=""><fmt:message key="localeTab"/></a><custom:locale/></li>
+            </ul>
+        </div>
+    </div>
+</div>

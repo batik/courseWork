@@ -1,0 +1,24 @@
+<security>
+    <constraint>
+        <url-pattern>/product/*</url-pattern>
+        <role>Admin</role>
+        <role>User</role>
+    </constraint>
+    <constraint>
+        <url-pattern>/checkout/*</url-pattern>
+        <role>User</role>
+    </constraint>
+    <constraint>
+        <url-pattern>/cart/*</url-pattern>
+        <role>User</role>
+    </constraint>
+    <constraint>
+        <url-pattern>/logout</url-pattern>
+        <role>User</role>
+        <role>Admin</role>
+    </constraint>
+    <constraint>
+        <url-pattern>/profile</url-pattern>
+        <role>Admin</role>
+    </constraint>
+</security>
